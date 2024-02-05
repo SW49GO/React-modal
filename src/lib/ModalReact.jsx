@@ -119,6 +119,10 @@ ModalReact.defaultProps = {
 ModalReact.propTypes = {
     isOpen: PropTypes.bool,
     themeName: PropTypes.string,
+    primary:PropTypes.string,
+    secondary:PropTypes.string,
+    thirdty:PropTypes.string,
+    fourthy:PropTypes.string,
     isOverlay: PropTypes.bool,
     styleModalContainer: PropTypes.object,
     styleOverlay: PropTypes.object,
