@@ -5,6 +5,11 @@ import * as React from 'react'
 interface ModalReactProps {
   isOpen: boolean;
   isOverlay: boolean;
+  themeName: string;
+  primary:string;
+  secondary:string;
+  thirdty:string;
+  fourthy:string;
   styleOverlay?:React.CSSProperties;
   styleModalTitle?:React.CSSProperties;
   modalTitle: string;
