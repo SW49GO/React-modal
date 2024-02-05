@@ -1,4 +1,6 @@
-import React from 'react'
+import { React, useState } from 'react'
+import PropTypes from 'prop-types'
+import * as themes from './themes'
 /**
  * Function to create Modulable Modal Component
  * @param {Boolean} param0-1
@@ -8,7 +10,12 @@ import React from 'react'
  * @returns {JSX Element}
  */
 function ModalReact({isOpen, 
+                     themeName,
                      isOverlay,
+                     primary,
+                     secondary,
+                     thirdty,
+                     fourthy,
                      styleModalContainer: customContainer,
                      styleOverlay:customOverlay, 
                      styleContainerContent: customContainerContent,
@@ -20,76 +27,69 @@ function ModalReact({isOpen,
                      styleContainerHeader: customContainerHeader, 
                      actionOnClose}){
 
-    // Default style for the modal
-    const defaultStyleModalContainer = {position: 'fixed', 
-                                        top: '50%' ,
-                                        left: '50%' ,
-                                        transform: 'translate(-50%, -50%)', 
-                                        backgroundColor:'#000',
-                                        color:'#FFF', 
-                                        display:'flex', 
-                                        flexDirection:'column',
-                                        zIndex:'10'}
+    // Theme selected
+    const selectedTheme = themes[themeName] || themes.defaultTheme
+
+    // State for theme with button for :hover
+    const [isButtonHovered, setIsButtonHovered] = useState(false)
+    // Colours defined
+    const colours = {backgroundContent:{primary}, colorText:{secondary},backgroundButton:'transparent', borderButton:`2px solid ${fourthy}`, colorTextButton:{secondary}, backgroundHover:{thirdty}, colorTextHover:{primary}, borderHeader:`2px solid  ${fourthy}`, headerColorText:{thirdty}, backGroundHeader:{fourthy}}
+
+    // Default style for the modal with theme and colour background
     const mergedStyleContainer = {
-        ...defaultStyleModalContainer,
+        ...selectedTheme.styleModalContainer,
+        backgroundColor: colours.backgroundContent?.primary ?? selectedTheme.styleModalContainer?.backgroundColor,
+        boxSadow: colours?.shadowColor ?? selectedTheme.styleModalContainer?.boxShadow,
         ...customContainer
       }
     // Default style Overlay
-    const defaultStyleOverlay = {position:'absolute',
-                                 top:'0',
-                                 left:'0',
-                                 width:'100%',
-                                 height:'100%',
-                                 backgroundColor:'#ededed',
-                                 opacity:'0.5',
-                                 zIndex:'1'}
     const mergedStyleOverlay = {
-        ...defaultStyleOverlay,
+        ...selectedTheme.styleOverlay,
         ...customOverlay
     }
     // Default style Modal title
-    const defaultStyleModalTitle = { color:'#FFF', 
-                                     padding:'0.1rem', 
-                                     fontSize:'0.8rem'}
     const mergedModalTitle = {
-        ...defaultStyleModalTitle,
+        ...selectedTheme.styleModalTitle,
         ...customModalTitle
     }
     // Default Modal Title
     const defaultModalTitle = ' '
 
     // Default style for container of the text content
-    const defaultStyleContainerContent = {padding:'0.6rem 1rem'}
     const mergedContainerContent = {
-        ...defaultStyleContainerContent,
+        ...selectedTheme.styleContainerContent,
+        color: colours.colorText?.secondary ?? selectedTheme.styleContainerContent?.color,
         ...customContainerContent
     }
     // Default content text
-    const defaultContentText = 'Votre texte ici...'
+    const defaultContentText = '{contentModal}'
 
     // Default style for container to close modal
-    const defaultStyleContainerHeader = {display:'flex',
-                                        justifyContent:'space-between',
-                                        alignItems:'center',
-                                        width:'100%'}
     const mergedContainerHeader = {
-        ...defaultStyleContainerHeader,
-        ...customContainerHeader
+        ...selectedTheme.styleContainerHeader,
+        borderBottom : colours?.borderHeader ?? selectedTheme.styleContainerHeader?.borderBottom,
+        color : colours.headerColorText?.thirdty ?? selectedTheme.styleContainerHeader?.color,
+        ...customContainerHeader,
+        backgroundColor:colours.backGroundHeader?.fourthy ??selectedTheme.styleContainerHeader?.backgroundColor,
     }
     // Default text button
     const defaultTextButton = 'X'
-    // Default style for element button to close modal
-    const defaultStyleButton = {backgroundColor:'transparent', 
-                                border:'none',
-                                color:'#FFF',
-                                cursor:'pointer'}
+    // Default style for element button to close modal with hover style
     const mergedStyleButton = {
-        ...defaultStyleButton,
-        ...customButton
+        ...selectedTheme.styleButton,
+        border:colours?.borderButton ??selectedTheme.styleButton?.border,
+        color:colours.colorTextButton?.secondary ?? selectedTheme.styleButton.color,
+        ...customButton,
+        ...(isButtonHovered && {
+            ...selectedTheme.styleButtonHover,
+            backgroundColor: colours.backgroundHover?.thirdty ?? selectedTheme.styleButtonHover?.backgroundColor,
+            color: colours.colorTextHover?.primary ?? selectedTheme.styleButtonHover?.color,
+          })
+        }
+    // Function to reset state button hover when clicked
+    const handleHoverClick=()=>{
+        setIsButtonHovered(false)
     }
-
-
-
     if(!isOpen){
         return null
     }
@@ -99,7 +99,9 @@ function ModalReact({isOpen,
         <div id="modalReact" style={mergedStyleContainer}>
              <div style={mergedContainerHeader}>
                 <div style={mergedModalTitle}>{modalTitle===undefined ? defaultModalTitle : modalTitle}</div>
-                <button style={mergedStyleButton} onClick={actionOnClose}>
+                <button style={mergedStyleButton} onClick={() => {actionOnClose(); handleHoverClick()}} 
+                        onMouseOver={() => setIsButtonHovered(true)}
+                        onMouseOut={() => setIsButtonHovered(false)}>
                     {textButton==='' || textButton===undefined ? defaultTextButton : textButton}
                 </button>
             </div>
@@ -110,5 +112,23 @@ function ModalReact({isOpen,
         </>
     )
 }
+ModalReact.defaultProps = {
+    themeName: 'defaultTheme',
+  }
 
+ModalReact.propTypes = {
+    isOpen: PropTypes.bool,
+    themeName: PropTypes.string,
+    isOverlay: PropTypes.bool,
+    styleModalContainer: PropTypes.object,
+    styleOverlay: PropTypes.object,
+    styleContainerContent: PropTypes.object,
+    styleModalTitle: PropTypes.object,
+    modalTitle: PropTypes.string,
+    contentModal: PropTypes.string,
+    styleButton: PropTypes.object,
+    textButton: PropTypes.string,
+    styleContainerHeader: PropTypes.object,
+    actionOnClose: PropTypes.func,
+}
 export default ModalReact

@@ -28,14 +28,13 @@ function App(){
             <ModalReact 
             isOpen={isOpen}
             isOverlay={true}
-            styleModalContainer={{borderRadius:10, backgroundColor:'#c9db6f', overflow:'hidden', boxShadow:'10px 5px 5px #505b19'}}
-            styleContainerHeader={{borderBottom:'1px solid #505b19', backgroundColor:"#93ad18"}}
-            styleModalTitle={{color:"#505b19", paddingLeft:'1rem'}}
-            modalTitle={'RHnet application'}
-            styleContainerContent={{fontSize:'20px', padding:'2rem', color:"#000"}}
-            contentModal={'Employee Created!'}
-            styleButton={{fontWeight: 'bold', color:'#505b19'}}
-            textButton={'x'}
+            themeName={'headerTheme'}
+            primary={'#ededed'}
+            styleContainerHeader={{borderBottom:'2px solid #000'}}
+            styleButton={{border:'none'}}
+            modalTitle={'Your title here'}
+            contentModal={'Your message here'}
+            textButton={'Your text button here'}
             actionOnClose={function () {setIsOpen(false)}}
             />
         </>
@@ -47,6 +46,13 @@ export default App
 
 # Using the different component options (Props):
 
+## You can directly use Theme :
+- 'themeName'  (String) : The Name the theme to use (basicTheme / headerTheme / buttonTheme or headerAndButtonTheme)
+
+## You can also use your own colours with :
+- 'primary' / 'secondary' / 'thirdty' / 'fourthy' (String) : Colours for modal elements
+
+## others props :
 - 'isOpen' (Boolean) : Show the Modal or not
 - 'isOverlay'  (Boolean) : Show Overlay or not
 - 'styleOverlay'  (CssProperties) : Style to use for Overlay
@@ -60,17 +66,15 @@ export default App
 - 'styleContainerContent'  (CssProperties) : Style to use for container of Content Modal
 - 'modalContent'   (String) : Text you want to display in the Content Modal
 
-## Some properties have default style configurations to allow visualization of the Modal :
 
-- 'styleOverlay' : {position:'absolute', top:'0', left:'0', width:'100%', height:'100%', backgroundColor:'#ededed', opacity:'0.5', zIndex:'1'}
-- 'styleModalContainer' : {position: 'fixed', top: '50%' , left: '50%' , transform: 'translate(-50%, -50%)'backgroundColor:'#000',color:'#FFF', display:'flex', flexDirection:'column',zIndex:'10'}
-- 'styleContainerHeader' : {display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%'}
-- 'styleModalTitle' :  { color:'#FFF', padding:'0.1rem', fontSize:'0.8rem'}
-- 'modalTitle': ' '
-- 'styleButton' : {backgroundColor:'transparent', border:'none', color:'#FFF', cursor:'pointer'}
--  'textButton' : 'X'
-- 'styleContainerContent' : {padding:'0.6rem 1rem'}
-- 'modalContent' : 'Votre texte ici...'
+## Some properties have default style configurations to allow visualization of the Modal (defaultTheme):
+
+- styleModalContainer : {position: 'fixed',top: '50%' ,left: '50%' ,transform: 'translate(-50%, -50%)',backgroundColor:'#000', color:'#FFF', display:'flex',flexDirection:'column',zIndex:'10'},
+- styleOverlay:{position:'absolute',top:'0',left:'0',width:'100%',height:'100%', backgroundColor:'#ededed', opacity:'0.5',zIndex:'1'},
+- styleModalTitle:{ color:'#FFF',padding:'0.1rem', fontSize:'0.8rem'},
+- styleContainerContent:{padding:'0.6rem 1rem'},
+- styleContainerHeader :{display:'flex',justifyContent:'space-between',alignItems:'center', width:'100%'},
+- styleButton:{backgroundColor:'transparent',border:'none',color:'#FFF',cursor:'pointer'}
 
 
 
