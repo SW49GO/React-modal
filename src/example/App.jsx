@@ -1,5 +1,5 @@
 import ModalReact from "../lib/ModalReact"
-import { useState } from "react"
+import React,{ useState } from "react"
 
 function App(){
     const [isOpen,setIsOpen]=useState(false)
