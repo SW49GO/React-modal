@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import PropTypes from 'prop-types'
-import * as themes from './themes'
+import * as themes from './themes.js'
 /**
  * Function to create Modulable Modal Component
  * @param {Boolean} param0-1
