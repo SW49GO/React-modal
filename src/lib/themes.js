@@ -1,6 +1,6 @@
 export const defaultTheme = {
     styleModalContainer : {position: 'fixed',top: '50%' ,left: '50%' ,transform: 'translate(-50%, -50%)',backgroundColor:'#000', color:'#FFF', display:'flex',flexDirection:'column',zIndex:'10'},
-    styleOverlay:{position:'absolute',top:'0',left:'0',width:'100%',height:'100%', backgroundColor:'#ededed', opacity:'0.5',zIndex:'1'},
+    styleOverlay:{position:'absolute',top:'0',left:'0',width:'100%',height:'100%', backgroundColor:'#ededed', opacity:'0.5',zIndex:'10'},
     styleModalTitle:{ color:'#FFF',padding:'0.1rem', fontSize:'0.8rem'},
     styleContainerContent:{padding:'0.6rem 1rem'},
     styleContainerHeader :{display:'flex',justifyContent:'space-between',alignItems:'center', width:'100%'},
@@ -8,6 +8,7 @@ export const defaultTheme = {
 }
 
 export const basicTheme = {
+    ...defaultTheme,
     styleModalContainer:{position: 'fixed', top: '50%' ,left: '50%' , transform: 'translate(-50%, -50%)',width:'20rem',borderRadius:10, backgroundColor:"#fff", overflow:'hidden', boxShadow:'10px 5px 5px #a3a3a3', border:'1px solid #000'},
     styleContainerClose:{borderBottom:'1px solid #a3a3a3', backgroundColor:"#fff"},
     styleContainerContent:{fontSize:'25px', padding:'2rem', color:"#000"},

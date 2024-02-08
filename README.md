@@ -13,9 +13,14 @@ The component is TypeScript compatible and includes a type definition file (Moda
 npm i modal-react-sw49go
 ```
 
+## Dependencies to install :
+- "react": "^18.2.0"
+- "react-dom": "^18.2.0"
+- "prop-types": "^15.8.1"
+
 ## Imported the component into your project:
 ```
-import ModalReact from 'modal-react-sw49go'
+import { ModalReact } from 'modal-react-sw49go'
 import { useState } from 'react'
 
 function App(){
