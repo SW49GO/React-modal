@@ -94,7 +94,7 @@ function ModalReact({isOpen,
         return null
     }
     return(
-        <>
+        <div>
         {isOverlay && <div style={mergedStyleOverlay}></div>}
         <div id="modalReact" style={mergedStyleContainer}>
              <div style={mergedContainerHeader}>
@@ -109,7 +109,7 @@ function ModalReact({isOpen,
                 {contentModal==='' || contentModal===undefined ? defaultContentText : contentModal}
             </div>
         </div>
-        </>
+        </div>
     )
 }
 ModalReact.defaultProps = {
