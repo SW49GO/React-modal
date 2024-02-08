@@ -59,7 +59,8 @@ const basicTheme = exports.basicTheme = {
     backgroundColor: "#fff",
     overflow: 'hidden',
     boxShadow: '10px 5px 5px #a3a3a3',
-    border: '1px solid #000'
+    border: '1px solid #000',
+    zIndex: '15'
   },
   styleContainerClose: {
     borderBottom: '1px solid #a3a3a3',

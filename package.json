@@ -1,6 +1,6 @@
 {
   "name": "modal-react-sw49go",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Modular and reusable React Modal",
   "main": "dist/index.js",
   "module": "dist/index.js",

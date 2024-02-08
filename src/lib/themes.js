@@ -9,7 +9,7 @@ export const defaultTheme = {
 
 export const basicTheme = {
     ...defaultTheme,
-    styleModalContainer:{position: 'fixed', top: '50%' ,left: '50%' , transform: 'translate(-50%, -50%)',width:'20rem',borderRadius:10, backgroundColor:"#fff", overflow:'hidden', boxShadow:'10px 5px 5px #a3a3a3', border:'1px solid #000'},
+    styleModalContainer:{position: 'fixed', top: '50%' ,left: '50%' , transform: 'translate(-50%, -50%)',width:'20rem',borderRadius:10, backgroundColor:"#fff", overflow:'hidden', boxShadow:'10px 5px 5px #a3a3a3', border:'1px solid #000', zIndex:'15'},
     styleContainerClose:{borderBottom:'1px solid #a3a3a3', backgroundColor:"#fff"},
     styleContainerContent:{fontSize:'25px', padding:'2rem', color:"#000"},
     styleButton:{padding:5,border:'none',background:'#fff', position:'absolute', right:10, top:5},
