@@ -24,7 +24,7 @@ const defaultTheme = exports.defaultTheme = {
     height: '100%',
     backgroundColor: '#ededed',
     opacity: '0.5',
-    zIndex: '1'
+    zIndex: '10'
   },
   styleModalTitle: {
     color: '#FFF',
@@ -48,6 +48,7 @@ const defaultTheme = exports.defaultTheme = {
   }
 };
 const basicTheme = exports.basicTheme = {
+  ...defaultTheme,
   styleModalContainer: {
     position: 'fixed',
     top: '50%',
