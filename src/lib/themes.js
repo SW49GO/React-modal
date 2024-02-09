@@ -40,7 +40,7 @@ export const headerAndButtonTheme = {
     ...basicTheme,
     styleContainerHeader :{display:'flex',justifyContent:'center', borderBottom:'1px solid #000', padding:5},
     mobileStyleContainerHeader: {fontSize:'0.7rem'},
-    styleContainerContent:{padding:'2rem 0 3rem 1rem', marginBottom:'2rem',fontSize:'25px'},
+    styleContainerContent:{padding:'2rem 0 5rem 1rem',fontSize:'25px'},
     styleModalTitle:{padding:0},
     styleButton:{position:'absolute',bottom:0, backgroundColor:'transparent', border:'1px solid black',borderRadius:5,boxShadow:'2px 2px 2px #a3a3a3',color:'#000',cursor:'pointer', padding:'5px 10px', margin:'1rem'},
     mobileStyleButton: {fontSize:'0.8rem'},

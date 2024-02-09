@@ -174,8 +174,7 @@ const headerAndButtonTheme = exports.headerAndButtonTheme = {
     fontSize: '0.7rem'
   },
   styleContainerContent: {
-    padding: '2rem 0 3rem 1rem',
-    marginBottom: '2rem',
+    padding: '2rem 0 5rem 1rem',
     fontSize: '25px'
   },
   styleModalTitle: {
