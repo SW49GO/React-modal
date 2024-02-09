@@ -100,8 +100,8 @@ function ModalReact({isOpen,
         ...selectedTheme.styleContainerHeader,
         borderBottom : colours?.borderHeader ?? selectedTheme.styleContainerHeader?.borderBottom,
         color : colours.headerColorText?.thirdty ?? selectedTheme.styleContainerHeader?.color,
-        ...customContainerHeader,
         backgroundColor:colours.backGroundHeader?.fourthy ??selectedTheme.styleContainerHeader?.backgroundColor,
+        ...customContainerHeader,
     }
     if (mediaQueryMatch) {
         mergedContainerHeader = {

@@ -137,8 +137,8 @@ function ModalReact(_ref) {
     ...selectedTheme.styleContainerHeader,
     borderBottom: (_colours$borderHeader = colours === null || colours === void 0 ? void 0 : colours.borderHeader) !== null && _colours$borderHeader !== void 0 ? _colours$borderHeader : (_selectedTheme$styleC2 = selectedTheme.styleContainerHeader) === null || _selectedTheme$styleC2 === void 0 ? void 0 : _selectedTheme$styleC2.borderBottom,
     color: (_colours$headerColorT = (_colours$headerColorT2 = colours.headerColorText) === null || _colours$headerColorT2 === void 0 ? void 0 : _colours$headerColorT2.thirdty) !== null && _colours$headerColorT !== void 0 ? _colours$headerColorT : (_selectedTheme$styleC3 = selectedTheme.styleContainerHeader) === null || _selectedTheme$styleC3 === void 0 ? void 0 : _selectedTheme$styleC3.color,
-    ...customContainerHeader,
-    backgroundColor: (_colours$backGroundHe = (_colours$backGroundHe2 = colours.backGroundHeader) === null || _colours$backGroundHe2 === void 0 ? void 0 : _colours$backGroundHe2.fourthy) !== null && _colours$backGroundHe !== void 0 ? _colours$backGroundHe : (_selectedTheme$styleC4 = selectedTheme.styleContainerHeader) === null || _selectedTheme$styleC4 === void 0 ? void 0 : _selectedTheme$styleC4.backgroundColor
+    backgroundColor: (_colours$backGroundHe = (_colours$backGroundHe2 = colours.backGroundHeader) === null || _colours$backGroundHe2 === void 0 ? void 0 : _colours$backGroundHe2.fourthy) !== null && _colours$backGroundHe !== void 0 ? _colours$backGroundHe : (_selectedTheme$styleC4 = selectedTheme.styleContainerHeader) === null || _selectedTheme$styleC4 === void 0 ? void 0 : _selectedTheme$styleC4.backgroundColor,
+    ...customContainerHeader
   };
   if (mediaQueryMatch) {
     mergedContainerHeader = {

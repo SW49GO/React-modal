@@ -134,8 +134,7 @@ const headerTheme = exports.headerTheme = {
 const buttonTheme = exports.buttonTheme = {
   ...basicTheme,
   styleContainerContent: {
-    padding: '2rem 0 3rem 1rem',
-    marginBottom: '2rem',
+    padding: '2rem 0 5rem 1rem',
     fontSize: '25px'
   },
   styleContainerHeader: {
