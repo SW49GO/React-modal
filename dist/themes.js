@@ -17,14 +17,15 @@ const defaultTheme = exports.defaultTheme = {
     zIndex: '10'
   },
   styleOverlay: {
-    position: 'absolute',
+    position: 'fixed',
     top: '0',
     left: '0',
-    width: '100%',
-    height: '100%',
+    width: '100vw',
+    height: '100vh',
     backgroundColor: '#ededed',
     opacity: '0.5',
-    zIndex: '10'
+    zIndex: '10',
+    overflow: 'hidden'
   },
   styleModalTitle: {
     color: '#FFF',
@@ -48,7 +49,17 @@ const defaultTheme = exports.defaultTheme = {
   }
 };
 const basicTheme = exports.basicTheme = {
-  ...defaultTheme,
+  styleOverlay: {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#ededed',
+    opacity: '0.5',
+    zIndex: '10',
+    overflow: 'hidden'
+  },
   styleModalContainer: {
     position: 'fixed',
     top: '50%',
@@ -62,14 +73,20 @@ const basicTheme = exports.basicTheme = {
     border: '1px solid #000',
     zIndex: '15'
   },
+  mobileStyleModalContainer: {
+    width: '16rem'
+  },
   styleContainerClose: {
     borderBottom: '1px solid #a3a3a3',
     backgroundColor: "#fff"
   },
   styleContainerContent: {
-    fontSize: '25px',
+    fontSize: '1.5rem',
     padding: '2rem',
     color: "#000"
+  },
+  mobileStyleContainerContent: {
+    fontSize: '1rem'
   },
   styleButton: {
     padding: 5,
@@ -95,6 +112,9 @@ const headerTheme = exports.headerTheme = {
     borderBottom: '1px solid #000',
     color: '#fff',
     backgroundColor: 'transparent'
+  },
+  mobileStyleContainerHeader: {
+    fontSize: '0.7rem'
   },
   styleModalTitle: {
     color: '#000',
@@ -135,6 +155,9 @@ const buttonTheme = exports.buttonTheme = {
     padding: '5px 10px',
     margin: '1rem'
   },
+  mobileStyleButton: {
+    fontSize: '0.8rem'
+  },
   styleButtonHover: {
     backgroundColor: '#a3a3a3',
     color: '#fff'
@@ -147,6 +170,9 @@ const headerAndButtonTheme = exports.headerAndButtonTheme = {
     justifyContent: 'center',
     borderBottom: '1px solid #000',
     padding: 5
+  },
+  mobileStyleContainerHeader: {
+    fontSize: '0.7rem'
   },
   styleContainerContent: {
     padding: '2rem 0 3rem 1rem',
@@ -167,6 +193,9 @@ const headerAndButtonTheme = exports.headerAndButtonTheme = {
     cursor: 'pointer',
     padding: '5px 10px',
     margin: '1rem'
+  },
+  mobileStyleButton: {
+    fontSize: '0.8rem'
   },
   styleButtonHover: {
     backgroundColor: '#a3a3a3',

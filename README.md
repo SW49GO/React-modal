@@ -71,9 +71,14 @@ export default App
 - 'styleContainerContent'  (CssProperties) : Style to use for container of Content Modal
 - 'modalContent'   (String) : Text you want to display in the Content Modal
 
+## Mobile Media Query can be changed with props :
+- 'mobileStyleModalContainer' (CssProperties)
+- 'mobileStyleContainerHeader' (CssProperties)
+- 'mobileStyleContainerContent' (CssProperties)
+- 'mobileStyleButton' (CssProperties)
+
 
 ## Some properties have default style configurations to allow visualization of the Modal (defaultTheme):
-
 - styleModalContainer : {position: 'fixed',top: '50%' ,left: '50%' ,transform: 'translate(-50%, -50%)',backgroundColor:'#000', color:'#FFF', display:'flex',flexDirection:'column',zIndex:'10'},
 - styleOverlay:{position:'absolute',top:'0',left:'0',width:'100%',height:'100%', backgroundColor:'#ededed', opacity:'0.5',zIndex:'1'},
 - styleModalTitle:{ color:'#FFF',padding:'0.1rem', fontSize:'0.8rem'},

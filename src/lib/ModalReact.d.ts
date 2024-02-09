@@ -14,11 +14,15 @@ interface ModalReactProps {
   styleModalTitle?:React.CSSProperties;
   modalTitle: string;
   styleModalContainer?: React.CSSProperties;
+  mobileStyleModalContainer?:React.CSSProperties;
   styleContainerContent?: React.CSSProperties;
+  mobileStyleContainerContent?:React.CSSProperties;
   contentModal: string;
   styleButton?: React.CSSProperties;
+  mobileStyleButton?: React.CSSProperties;
   textButton?: string;
   styleContainerHeader?: React.CSSProperties;
+  mobileStyleContainerHeader?:React.CSSProperties;
   actionOnClose?: () => void
 }
 
