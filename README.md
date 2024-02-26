@@ -12,6 +12,8 @@ The component is TypeScript compatible and includes a type definition file (Moda
 ```bash
 npm i modal-react-sw49go
 ```
+## Prerequisites :
+- Node.js v18.16.0
 
 ## Dependencies to install :
 - "react": "^18.2.0"
@@ -28,7 +30,7 @@ function App(){
     
     return(
         <>
-            <button onClick={() => setIsOpen(true)}>Ouvrir</button>
+            <button onClick={() => setIsOpen(true)}>Open</button>
 
             <ModalReact 
             isOpen={isOpen}
