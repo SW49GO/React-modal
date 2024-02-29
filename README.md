@@ -53,13 +53,13 @@ export default App
 
 # Using the different component options (Props):
 
-## You can directly use Theme :
-- 'themeName'  (String) : The Name the theme to use (basicTheme / headerTheme / buttonTheme or headerAndButtonTheme)
+## You can directly use a Theme :
+- 'themeName'  (String) : The Name of the theme to use (basicTheme / headerTheme / buttonTheme or headerAndButtonTheme)
 
-## You can also use your own colours with :
+## You can use the color properties represented in the example above :
 - 'primary' / 'secondary' / 'thirdty' / 'fourthy' (String) : Colours for modal elements
 
-## others props :
+## Others props :
 - 'isOpen' (Boolean) : Show the Modal or not
 - 'isOverlay'  (Boolean) : Show Overlay or not
 - 'styleOverlay'  (CssProperties) : Style to use for Overlay
